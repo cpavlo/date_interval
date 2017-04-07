@@ -1,0 +1,17 @@
+uk:
+  components:
+    date_interval:
+      from: "від"
+      to: "до"
+      intervals:
+        day: "За сьогодні"
+        week: "Цей тиждень"
+        week_ago: "Тиждень назад"
+        month: "Цей місяць"
+        month_ago: "Місяць назад"
+        year: "Цей рік"
+        year_ago: "Рік назад"
+        manual: "Вказати вручну"
+  helpers:
+    links:
+      apply: "Застосувати"

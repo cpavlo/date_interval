@@ -1,0 +1,24 @@
+- model_class = DatedResource
+.page-header
+  %h1=t '.title', default: model_class.model_name.human.pluralize.titleize
+= render_date_interval_for(@dated_resources)
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:date)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', default: t('helpers.actions')
+  %tbody
+    - @dated_resources.each do |dated|
+      %tr
+        %td= link_to dated.id, dated_resource_path(dated)
+        %td= dated.date
+        %td= dated.name
+        %td=l dated.created_at
+        %td
+          = link_to t('.edit', default: t('helpers.links.edit')), edit_dated_resource_path(dated), class: 'btn btn-default btn-xs'
+          = link_to t('.destroy', default: t('helpers.links.destroy')), dated_resource_path(dated), method: :delete, data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) }, class: 'btn btn-xs btn-danger'
+
+= link_to t('.new', default: t('helpers.links.new')), new_dated_resource_path, class: 'btn btn-primary'

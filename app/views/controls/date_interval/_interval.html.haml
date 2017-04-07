@@ -1,0 +1,30 @@
+.form-inline#date_interval
+  .form-group.select
+    %select.form-control.type
+      - DateInterval::Interval::Type.constants.each do |constant|
+        - const_name = constant.to_s.downcase
+        - const_value = DateInterval::Interval::Type.const_get(constant)
+        %option{value: const_value, selected: interval.type == const_value}
+          = t("components.date_interval.intervals.#{const_name}", default: const_name.humanize)
+
+  %span.manual{style: "display: #{interval.type == DateInterval::Interval::Type::MANUAL ? 'inline' : 'none'}"}
+    - date_format = I18n.t('date.formats.default', default: '%Y/%m/%d')
+    - picker_date_format = date_format.gsub('%Y', 'YYYY').gsub('%m', 'MM').gsub('%b', 'MMM').gsub('%B', 'MMMM').gsub('%d', 'DD')
+    - picker_data = {format: picker_date_format, locale: I18n.locale}
+
+    .form-group
+      %label{for: 'interval_from'}= t('components.date_interval.from', default: 'from')
+      .input.input-group.date.datepicker{data: picker_data}
+        %input.form-control.from#interval_from{value: l(interval.start_date, format: date_format)}
+        %span.input-group-addon
+          .glyphicon.glyphicon-calendar
+
+    .form-group
+      %label{for: 'interval_to'}= t('components.date_interval.to', default: 'to')
+      .input.input-group.date.datepicker{data: picker_data}
+        %input.form-control.to#interval_to{value: l(interval.end_date, format: date_format)}
+        %span.input-group-addon
+          .glyphicon.glyphicon-calendar
+
+    %a.btn.btn-default.apply{title: t('helpers.links.apply', default: 'Apply')}
+      .glyphicon.glyphicon-ok

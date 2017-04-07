@@ -1,0 +1,17 @@
+ru:
+  components:
+    date_interval:
+      from: "от"
+      to: "до"
+      intervals:
+        day: "За сегодня"
+        week: "Эта неделя"
+        week_ago: "Неделю назад"
+        month: "Этот месяц"
+        month_ago: "Месяц назад"
+        year: "Этот год"
+        year_ago: "Год назад"
+        manual: "Указать вручную"
+  helpers:
+    links:
+      apply: "Применить"

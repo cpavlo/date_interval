@@ -1,0 +1,17 @@
+en:
+  components:
+    date_interval:
+      from: "from"
+      to: "to"
+      intervals:
+        day: "Current day"
+        week: "Current week"
+        week_ago: "Week ago"
+        month: "Current month"
+        month_ago: "Month ago"
+        year: "Current year"
+        year_ago: "Year ago"
+        manual: "Manual"
+  helpers:
+    links:
+      apply: "Apply"
