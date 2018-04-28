@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DatedsControllerTest < ActionController::TestCase
+class DatedResourcesControllerTest < ActionController::TestCase
   setup do
     @dated_resource = dateds(:one)
   end

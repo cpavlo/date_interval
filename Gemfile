@@ -17,7 +17,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sqlite3'
 gem 'rails-i18n'
 gem 'haml-rails'
-gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'momentjs-rails', '>= 2.9.0'

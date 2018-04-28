@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DatedTest < ActiveSupport::TestCase
+class DatedResourceTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
